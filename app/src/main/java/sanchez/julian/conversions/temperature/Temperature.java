@@ -1,12 +1,15 @@
 package sanchez.julian.conversions.temperature;
 
-public class Temperature {
+public abstract class Temperature {
+    protected double temperature;
 
-    public static double cToF(final double temp) {
-        return temp * 9 / 5 + 32;
+    public Temperature(double temp) {
+        temperature = temp;
     }
+    public abstract Temperature convertTo(TemperatureUnit unit);
 
-    public static double fToC(double temp) {
-        return ( temp - 32 ) * 5 / 9;
+    public double getTemp() {
+        return temperature;
     }
 }
+
